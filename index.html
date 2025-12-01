@@ -94,6 +94,112 @@
             margin: 25px 0 15px 0;
         }
         
+        .age-group-card {
+            background: #f8f9ff;
+            border-left: 6px solid #667eea;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .age-group-card h3 {
+            color: #667eea;
+            font-size: 2em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .age-group-card .age-subtitle {
+            color: #764ba2;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .curriculum-image {
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .curriculum-column {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .curriculum-column h4 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .curriculum-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .curriculum-column li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .curriculum-column li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .example-box {
+            background: #fff9e6;
+            border-left: 5px solid #ffc107;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .example-box h4 {
+            color: #f57c00;
+            margin-top: 0;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
         .integration-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -344,6 +450,39 @@
             margin-top: 0;
         }
         
+        .nav-menu {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-menu a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            background: #667eea;
+            color: white;
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2em;
@@ -351,29 +490,331 @@
             .section {
                 padding: 30px 20px;
             }
-            .integration-grid {
+            .integration-grid,
+            .curriculum-grid {
                 grid-template-columns: 1fr;
             }
             .schedule-grid {
                 grid-template-columns: 1fr;
+            }
+            .nav-menu ul {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="hero">
-        <h1>🎓 Adopt iLife AI Curriculum</h1>
+        <h1>🎓 iLife AI School</h1>
         <p>Seamlessly Integrate AI Education with Your Mainstream Curriculum</p>
         <p style="font-size: 1.1em; margin-top: 20px;">For Parents Homeschooling | Schools | Educational Institutions</p>
         <div class="hero-buttons">
+            <a href="#curriculum" class="hero-button">📚 Age-Appropriate Curriculum</a>
             <a href="#parents" class="hero-button">👨‍👩‍👧 For Parents</a>
             <a href="#schools" class="hero-button">🏫 For Schools</a>
             <a href="#pricing" class="hero-button">💰 Pricing</a>
         </div>
     </div>
 
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#curriculum">📚 Curriculum by Age</a></li>
+            <li><a href="#integration">🎯 How It Works</a></li>
+            <li><a href="#parents">👨‍👩‍👧 For Parents</a></li>
+            <li><a href="#schools">🏫 For Schools</a></li>
+            <li><a href="#pricing">💰 Pricing</a></li>
+            <li><a href="#faq">❓ FAQ</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <div class="section">
+        <div class="section" id="curriculum">
+            <h2>📚 Age-Appropriate AI Curriculum: 3 Years to Grade 12</h2>
+            
+            <p style="font-size: 1.3em; margin-bottom: 40px;">Our research-based curriculum grows with your child, introducing AI concepts at exactly the right developmental stage. Each age group builds on previous learning while respecting cognitive development.</p>
+
+            <div class="info-box">
+                <h3>🧠 Our Curriculum Philosophy</h3>
+                <ul>
+                    <li><strong>Developmentally Appropriate:</strong> Activities match brain development stages</li>
+                    <li><strong>Play-Based Learning:</strong> Ages 3-8 learn through games and exploration</li>
+                    <li><strong>Hands-On Projects:</strong> Ages 9-12 build and create with AI tools</li>
+                    <li><strong>Real-World Application:</strong> Ages 13-18 solve actual problems with AI</li>
+                    <li><strong>Ethics First:</strong> Every age learns responsible technology use</li>
+                </ul>
+            </div>
+
+            <!-- Ages 3-5 -->
+            <div class="age-group-card">
+                <h3>🎨 Ages 3-5: Foundation Stage</h3>
+                <div class="age-subtitle">Preschool & Kindergarten | Building Blocks of Thinking</div>
+                
+                <img src="https://mb-s3.blr1.digitaloceanspaces.com/gemini-images/7b622036-3777-41f6-b99f-ec67a3153632.png" alt="Ages 3-5 Curriculum" class="curriculum-image">
+                
+                <div class="curriculum-grid">
+                    <div class="curriculum-column">
+                        <h4>📖 Traditional Learning (80%)</h4>
+                        <ul>
+                            <li>Letters and alphabet recognition</li>
+                            <li>Numbers and counting (1-20)</li>
+                            <li>Colors, shapes, and sizes</li>
+                            <li>Social skills and sharing</li>
+                            <li>Fine and gross motor skills</li>
+                            <li>Basic storytelling</li>
+                            <li>Following simple instructions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="curriculum-column">
+                        <h4>🤖 Parallel AI Learning (20%)</h4>
+                        <ul>
+                            <li>Pattern recognition games (sorting by color, shape)</li>
+                            <li>Cause-and-effect understanding (if-then thinking)</li>
+                            <li>Categorization activities (grouping similar items)</li>
+                            <li>"Good tech vs. bad tech" discussions</li>
+                            <li>Voice assistant awareness (Alexa, Siri basics)</li>
+                            <li>Sequence building (step-by-step thinking)</li>
+                            <li>Problem-solving through play</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>📝 Real Activity Example: "Robot Says" Game</h4>
+                    <p><strong>Activity:</strong> Like "Simon Says" but with robot commands. Children learn that robots/AI need clear, specific instructions.</p>
+                    <p><strong>Learning Outcome:</strong> Understanding that computers need precise instructions (foundation for coding logic)</p>
+                    <p><strong>Time:</strong> 15 minutes, twice per week</p>
+                    <p><strong>Materials:</strong> None needed - just play!</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-badge">Pattern Recognition</div>
+                    <div class="skill-badge">Logical Thinking</div>
+                    <div class="skill-badge">Categorization</div>
+                    <div class="skill-badge">Following Rules</div>
+                </div>
+            </div>
+
+            <!-- Ages 6-8 -->
+            <div class="age-group-card">
+                <h3>🚀 Ages 6-8: Building Blocks Stage</h3>
+                <div class="age-subtitle">Grades 1-3 | Understanding How Things Work</div>
+                
+                <img src="https://mb-s3.blr1.digitaloceanspaces.com/gemini-images/86d82509-c39b-4553-bcf7-d8a2cb981006.png" alt="Ages 6-8 Curriculum" class="curriculum-image">
+                
+                <div class="curriculum-grid">
+                    <div class="curriculum-column">
+                        <h4>📖 Traditional Learning (80%)</h4>
+                        <ul>
+                            <li>Reading fluency and comprehension</li>
+                            <li>Writing sentences and paragraphs</li>
+                            <li>Addition, subtraction, basic multiplication</li>
+                            <li>Science concepts (plants, animals, weather)</li>
+                            <li>Geography and community</li>
+                            <li>Art and creative expression</li>
+                            <li>Physical education</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="curriculum-column">
+                        <h4>🤖 Parallel AI Learning (20%)</h4>
+                        <ul>
+                            <li>Simple coding concepts (block-based programming)</li>
+                            <li>How computers "think" (binary basics, yes/no logic)</li>
+                            <li>Data and information (collecting, organizing)</li>
+                            <li>AI in daily life (recommendations, search)</li>
+                            <li>Digital citizenship basics (online safety)</li>
+                            <li>Algorithm understanding (recipes as algorithms)</li>
+                            <li>Input-output relationships</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>📝 Real Activity Example: "YouTube Detective"</h4>
+                    <p><strong>Activity:</strong> Discuss why YouTube recommends certain videos. Children track what they watch and predict next recommendations.</p>
+                    <p><strong>Learning Outcome:</strong> Understanding that AI learns from behavior and makes predictions</p>
+                    <p><strong>Time:</strong> 30 minutes per week</p>
+                    <p><strong>Materials:</strong> Paper, crayons for tracking (minimal screen time)</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-badge">Computational Thinking</div>
+                    <div class="skill-badge">Data Awareness</div>
+                    <div class="skill-badge">Algorithm Logic</div>
+                    <div class="skill-badge">Digital Safety</div>
+                </div>
+            </div>
+
+            <!-- Ages 9-12 -->
+            <div class="age-group-card">
+                <h3>🔬 Ages 9-12: Understanding Stage</h3>
+                <div class="age-subtitle">Grades 4-6 | Exploring AI Concepts</div>
+                
+                <img src="https://mb-s3.blr1.digitaloceanspaces.com/gemini-images/75a61daf-92ef-46d0-a226-1ad4bff14261.png" alt="Ages 9-12 Curriculum" class="curriculum-image">
+                
+                <div class="curriculum-grid">
+                    <div class="curriculum-column">
+                        <h4>📖 Traditional Learning (80%)</h4>
+                        <ul>
+                            <li>Advanced mathematics (fractions, decimals)</li>
+                            <li>Science experiments and method</li>
+                            <li>History and world cultures</li>
+                            <li>Advanced reading and analysis</li>
+                            <li>Essay writing and research</li>
+                            <li>Critical thinking skills</li>
+                            <li>Team projects and collaboration</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="curriculum-column">
+                        <h4>🤖 Parallel AI Learning (20%)</h4>
+                        <ul>
+                            <li>Machine learning basics (training models)</li>
+                            <li>How AI learns from data (supervised learning)</li>
+                            <li>AI bias and fairness (ethical discussions)</li>
+                            <li>Creating with AI tools (art, music, writing)</li>
+                            <li>Privacy and data protection</li>
+                            <li>Identifying AI-generated content</li>
+                            <li>AI in different fields (medicine, environment)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>📝 Real Project Example: "Train Your Own AI"</h4>
+                    <p><strong>Project:</strong> Using simple tools like Teachable Machine, students train an AI to recognize objects, sounds, or poses.</p>
+                    <p><strong>Learning Outcome:</strong> Hands-on understanding of how AI learns from examples and can make mistakes</p>
+                    <p><strong>Time:</strong> 2-hour project over 2 weeks</p>
+                    <p><strong>Materials:</strong> Computer/tablet, webcam, free online tools</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-badge">Machine Learning Basics</div>
+                    <div class="skill-badge">Ethical Reasoning</div>
+                    <div class="skill-badge">Data Analysis</div>
+                    <div class="skill-badge">AI Creation</div>
+                </div>
+            </div>
+
+            <!-- Ages 13-15 -->
+            <div class="age-group-card">
+                <h3>💡 Ages 13-15: Application Stage</h3>
+                <div class="age-subtitle">Grades 7-9 | Building with AI</div>
+                
+                <img src="https://mb-s3.blr1.digitaloceanspaces.com/gemini-images/bfd1d03f-cf58-4918-a051-1cf986bc4b0e.png" alt="Ages 13-15 Curriculum" class="curriculum-image">
+                
+                <div class="curriculum-grid">
+                    <div class="curriculum-column">
+                        <h4>📖 Traditional Learning (80%)</h4>
+                        <ul>
+                            <li>Algebra and geometry</li>
+                            <li>Advanced sciences (biology, chemistry, physics)</li>
+                            <li>World history and civics</li>
+                            <li>Advanced essay writing</li>
+                            <li>Foreign language studies</li>
+                            <li>Research and analysis</li>
+                            <li>Career exploration</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="curriculum-column">
+                        <h4>🤖 Parallel AI Learning (20%)</h4>
+                        <ul>
+                            <li>Training AI models (classification, prediction)</li>
+                            <li>Understanding algorithms (sorting, searching)</li>
+                            <li>AI ethics and responsibility (bias, fairness)</li>
+                            <li>Using AI for research and learning</li>
+                            <li>Identifying deepfakes and AI content</li>
+                            <li>Natural language processing basics</li>
+                            <li>AI's impact on society and jobs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>📝 Real Project Example: "AI for Good Challenge"</h4>
+                    <p><strong>Project:</strong> Students identify a local problem (traffic, pollution, accessibility) and design an AI solution.</p>
+                    <p><strong>Learning Outcome:</strong> Applying AI thinking to real-world problems, understanding limitations and ethics</p>
+                    <p><strong>Time:</strong> 4-week project with presentation</p>
+                    <p><strong>Materials:</strong> Research tools, presentation software, optional: coding platforms</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-badge">AI Model Training</div>
+                    <div class="skill-badge">Algorithm Design</div>
+                    <div class="skill-badge">Ethical AI Development</div>
+                    <div class="skill-badge">Problem Solving</div>
+                </div>
+            </div>
+
+            <!-- Ages 16-18 -->
+            <div class="age-group-card">
+                <h3>🎓 Ages 16-18: Mastery & Leadership Stage</h3>
+                <div class="age-subtitle">Grades 10-12 | Leading the AI Future</div>
+                
+                <img src="https://mb-s3.blr1.digitaloceanspaces.com/gemini-images/22e904cd-aabd-4b3d-9e68-930b53ac8ec2.png" alt="Ages 16-18 Curriculum" class="curriculum-image">
+                
+                <div class="curriculum-grid">
+                    <div class="curriculum-column">
+                        <h4>📖 Traditional Learning (80%)</h4>
+                        <ul>
+                            <li>Advanced mathematics (calculus, statistics)</li>
+                            <li>Specialized sciences (AP courses)</li>
+                            <li>College preparation (SAT/ACT)</li>
+                            <li>Advanced writing and rhetoric</li>
+                            <li>Career planning and internships</li>
+                            <li>Leadership and entrepreneurship</li>
+                            <li>Specialized electives</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="curriculum-column">
+                        <h4>🤖 Parallel AI Learning (20%)</h4>
+                        <ul>
+                            <li>Building AI applications (full projects)</li>
+                            <li>Natural language processing (chatbots, translation)</li>
+                            <li>Computer vision (image recognition)</li>
+                            <li>AI in different industries (healthcare, finance)</li>
+                            <li>Ethical AI development and governance</li>
+                            <li>AI entrepreneurship and startups</li>
+                            <li>Future of work preparation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>📝 Real Project Example: "AI Startup Pitch"</h4>
+                    <p><strong>Project:</strong> Students develop a complete AI product concept, build a prototype, and pitch to "investors" (teachers, parents, local business leaders).</p>
+                    <p><strong>Learning Outcome:</strong> End-to-end AI product development, business thinking, presentation skills</p>
+                    <p><strong>Time:</strong> Full semester capstone project</p>
+                    <p><strong>Materials:</strong> Development tools, cloud platforms, presentation materials</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-badge">AI Application Development</div>
+                    <div class="skill-badge">Advanced ML Techniques</div>
+                    <div class="skill-badge">AI Entrepreneurship</div>
+                    <div class="skill-badge">Industry Applications</div>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <h3>🎯 By Grade 12, iLife Students Can:</h3>
+                <ul>
+                    <li>✅ Build functional AI applications from scratch</li>
+                    <li>✅ Understand and explain complex AI concepts to others</li>
+                    <li>✅ Critically evaluate AI systems for bias and fairness</li>
+                    <li>✅ Use AI tools productively in any field of study</li>
+                    <li>✅ Lead discussions on AI ethics and policy</li>
+                    <li>✅ Confidently pursue AI-related careers or any field enhanced by AI</li>
+                    <li>✅ Teach others about responsible AI use</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="integration">
             <h2>🎯 How It Works: Parallel Integration Model</h2>
             
             <p style="font-size: 1.3em; margin-bottom: 30px;">Our AI curriculum doesn't replace your existing education—it <strong>enhances it</strong>. Think of it as adding a second track that runs parallel to mainstream subjects, creating well-rounded, future-ready students.</p>
@@ -667,51 +1108,6 @@
                 </div>
             </div>
 
-            <div class="info-box">
-                <h3>📊 Sample School Schedule Integration</h3>
-                <h4>Example: Grade 4 Class (Model B - Integrated Approach)</h4>
-                
-                <table style="width: 100%; margin-top: 20px;">
-                    <tr style="background: #e7f3ff;">
-                        <td style="padding: 10px; font-weight: bold;">Period</td>
-                        <td style="padding: 10px; font-weight: bold;">Subject</td>
-                        <td style="padding: 10px; font-weight: bold;">AI Integration</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px;">1</td>
-                        <td style="padding: 10px;">Math (Geometry)</td>
-                        <td style="padding: 10px;">Use AI pattern recognition to identify shapes</td>
-                    </tr>
-                    <tr style="background: #f8f9ff;">
-                        <td style="padding: 10px;">2</td>
-                        <td style="padding: 10px;">Language Arts</td>
-                        <td style="padding: 10px;">Discuss: How do AI writing tools work? Ethics of AI-generated content</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px;">3</td>
-                        <td style="padding: 10px;"><strong>Dedicated AI Class</strong></td>
-                        <td style="padding: 10px;"><strong>Machine Learning Basics: Training a simple classifier</strong></td>
-                    </tr>
-                    <tr style="background: #f8f9ff;">
-                        <td style="padding: 10px;">4</td>
-                        <td style="padding: 10px;">Science (Weather)</td>
-                        <td style="padding: 10px;">How AI helps predict weather patterns</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px;">5</td>
-                        <td style="padding: 10px;">Social Studies</td>
-                        <td style="padding: 10px;">AI's impact on jobs and society</td>
-                    </tr>
-                    <tr style="background: #f8f9ff;">
-                        <td style="padding: 10px;">6</td>
-                        <td style="padding: 10px;">Art</td>
-                        <td style="padding: 10px;">Create art WITH AI tools (not replacing creativity)</td>
-                    </tr>
-                </table>
-                
-                <p style="margin-top: 20px;"><strong>Total AI Integration:</strong> 1 dedicated period + touchpoints in 4 other subjects = ~20% of learning time</p>
-            </div>
-
             <div class="success-box">
                 <h3>🎯 What Schools Achieve with iLife</h3>
                 <ul>
@@ -721,21 +1117,6 @@
                     <li><strong>28% improvement in standardized test scores</strong> (AI enhances core learning)</li>
                     <li><strong>100% compliance</strong> with national curriculum standards</li>
                     <li><strong>Competitive advantage</strong> in increasingly crowded education market</li>
-                </ul>
-            </div>
-
-            <div class="highlight-box">
-                <h3>⚡ Quick Start Package for Schools</h3>
-                <p>Get started in just 30 days with our turnkey solution:</p>
-                <ul>
-                    <li>✅ Complete curriculum for all grade levels (KG-12)</li>
-                    <li>✅ Teacher training (3-day intensive + ongoing support)</li>
-                    <li>✅ Parent orientation materials and webinars</li>
-                    <li>✅ Digital learning platform access</li>
-                    <li>✅ Assessment and progress tracking tools</li>
-                    <li>✅ Marketing materials for enrollment</li>
-                    <li>✅ Dedicated account manager</li>
-                    <li>✅ First 90 days of intensive support</li>
                 </ul>
             </div>
         </div>
@@ -940,7 +1321,7 @@
             </table>
         </div>
 
-        <div class="section">
+        <div class="section" id="faq">
             <h2>❓ Frequently Asked Questions</h2>
             
             <h3>For Parents</h3>
@@ -1029,7 +1410,6 @@
 
             <div style="text-align: center; margin: 50px 0;">
                 <a href="mailto:amarnath@lifedflix.com?subject=iLife Adoption Inquiry" style="background: white; color: #667eea; padding: 20px 50px; font-size: 1.3em; border: none; border-radius: 50px; font-weight: bold; text-decoration: none; display: inline-block; margin: 10px;">📧 Schedule Free Consultation</a>
-                <a href="tel:+1234567890" style="background: rgba(255,255,255,0.2); color: white; padding: 20px 50px; font-size: 1.3em; border: 2px solid white; border-radius: 50px; font-weight: bold; text-decoration: none; display: inline-block; margin: 10px;">📞 Call Us Now</a>
             </div>
 
             <div style="background: rgba(255,255,255,0.2); padding: 40px; border-radius: 15px; margin-top: 50px; text-align: center;">
