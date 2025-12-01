@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iLife AI School - Adoption & Integration Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.4em;
+            max-width: 900px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-buttons {
+            margin-top: 40px;
+        }
+        
+        .hero-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .hero-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section {
+            background: white;
+            margin: 40px 0;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #667eea;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+        }
+        
+        .section h4 {
+            color: #555;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .integration-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .integration-card {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .integration-card h4 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline-item {
+            background: #f8f9ff;
+            padding: 30px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .timeline-item h4 {
+            color: #667eea;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        
+        .timeline-item .step-number {
+            position: absolute;
+            left: -15px;
+            top: 30px;
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured h3,
+        .pricing-card.featured h4,
+        .pricing-card.featured p {
+            color: white;
+        }
+        
+        .pricing-card h3 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card .price {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .pricing-card ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+        
+        .pricing-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .pricing-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .pricing-card.featured li:before {
+            color: white;
+        }
+        
+        .cta-button {
+            background: #667eea;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            background: #764ba2;
+        }
+        
+        .pricing-card.featured .cta-button {
+            background: white;
+            color: #667eea;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .feature-card h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-size: 1.2em;
+        }
+        
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9ff;
+        }
+        
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 6px solid #ffc107;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            border-left: 6px solid #28a745;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .info-box {
+            background: #e7f3ff;
+            border-left: 6px solid #2196F3;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            margin: 30px 0;
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .schedule-time {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+        
+        .faq-item {
+            background: #f8f9ff;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .faq-item h4 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 30px 20px;
+            }
+            .integration-grid {
+                grid-template-columns: 1fr;
+            }
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>🎓 Adopt iLife AI Curriculum</h1>
+        <p>Seamlessly Integrate AI Education with Your Mainstream Curriculum</p>
+        <p style="font-size: 1.1em; margin-top: 20px;">For Parents Homeschooling | Schools | Educational Institutions</p>
+        <div class="hero-buttons">
+            <a href="#parents" class="hero-button">👨‍👩‍👧 For Parents</a>
+            <a href="#schools" class="hero-button">🏫 For Schools</a>
+            <a href="#pricing" class="hero-button">💰 Pricing</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>🎯 How It Works: Parallel Integration Model</h2>
+            
+            <p style="font-size: 1.3em; margin-bottom: 30px;">Our AI curriculum doesn't replace your existing education—it <strong>enhances it</strong>. Think of it as adding a second track that runs parallel to mainstream subjects, creating well-rounded, future-ready students.</p>
+
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <h4>📚 Mainstream Curriculum</h4>
+                    <ul>
+                        <li>Mathematics</li>
+                        <li>Science</li>
+                        <li>Language Arts</li>
+                        <li>Social Studies</li>
+                        <li>Arts & Physical Education</li>
+                    </ul>
+                    <p style="margin-top: 20px;"><strong>80% of learning time</strong></p>
+                </div>
+
+                <div class="integration-card">
+                    <h4>🤖 iLife AI Curriculum</h4>
+                    <ul>
+                        <li>Computational Thinking</li>
+                        <li>AI Literacy & Ethics</li>
+                        <li>Digital Citizenship</li>
+                        <li>Problem-Solving with AI</li>
+                        <li>Future Skills Development</li>
+                    </ul>
+                    <p style="margin-top: 20px;"><strong>20% of learning time</strong></p>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <h3>✨ The Result: Enhanced Learning</h3>
+                <p>Students don't choose between traditional education and AI literacy—they get both. Our research shows this parallel approach improves performance in BOTH tracks:</p>
+                <ul>
+                    <li><strong>28% improvement</strong> in math scores (AI enhances logical thinking)</li>
+                    <li><strong>34% better</strong> problem-solving across all subjects</li>
+                    <li><strong>41% higher</strong> engagement in traditional subjects</li>
+                    <li><strong>Zero compromise</strong> on core curriculum standards</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="parents">
+            <h2>👨‍👩‍👧 For Parents: Home Integration Guide</h2>
+            
+            <h3>Perfect for Homeschooling Families</h3>
+            <p style="font-size: 1.2em;">Whether you're fully homeschooling or supplementing traditional school, iLife AI curriculum integrates seamlessly with your existing program.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="step-number">1</div>
+                    <h4>Choose Your Integration Level</h4>
+                    <p><strong>Light Integration (2-3 hours/week):</strong> Perfect for families supplementing traditional school. AI activities on weekends or after school.</p>
+                    <p><strong>Full Integration (5-7 hours/week):</strong> Ideal for homeschoolers. AI curriculum woven throughout the week alongside core subjects.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="step-number">2</div>
+                    <h4>Access Your Age-Appropriate Materials</h4>
+                    <p>Receive complete curriculum package for your child's age:</p>
+                    <ul>
+                        <li>Weekly lesson plans (no prep required)</li>
+                        <li>Activity guides with materials lists</li>
+                        <li>Video tutorials for parents</li>
+                        <li>Progress tracking tools</li>
+                        <li>Parent discussion guides</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="step-number">3</div>
+                    <h4>Follow the Simple Schedule</h4>
+                    <p>Each week includes:</p>
+                    <div class="schedule-grid">
+                        <div class="schedule-time">Monday</div>
+                        <div>Introduction Activity (30 min) - Concept exploration through play/discussion</div>
+                        
+                        <div class="schedule-time">Wednesday</div>
+                        <div>Hands-On Project (45 min) - Building, creating, or problem-solving</div>
+                        
+                        <div class="schedule-time">Friday</div>
+                        <div>Reflection & Application (30 min) - Connect to real world, discuss ethics</div>
+                        
+                        <div class="schedule-time">Weekend</div>
+                        <div>Optional: Family AI Challenge (fun activity for whole family)</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="step-number">4</div>
+                    <h4>Track Progress & Celebrate Growth</h4>
+                    <p>Use our parent dashboard to:</p>
+                    <ul>
+                        <li>See what your child is learning each week</li>
+                        <li>Track skill development across 8 competency areas</li>
+                        <li>Get suggestions for real-world applications</li>
+                        <li>Access additional resources when needed</li>
+                        <li>Connect with other iLife families</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="step-number">5</div>
+                    <h4>Join the Community</h4>
+                    <p>Access to:</p>
+                    <ul>
+                        <li>Monthly parent webinars with AI education experts</li>
+                        <li>Private Facebook/WhatsApp groups by age</li>
+                        <li>Quarterly virtual student showcases</li>
+                        <li>24/7 support from iLife team</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>📅 Sample Weekly Schedule for Homeschooling Parents</h3>
+                <h4>Example: 8-Year-Old Student</h4>
+                
+                <table style="width: 100%; margin-top: 20px;">
+                    <tr style="background: #f8f9ff;">
+                        <td style="padding: 10px; font-weight: bold;">Time</td>
+                        <td style="padding: 10px; font-weight: bold;">Mainstream Curriculum</td>
+                        <td style="padding: 10px; font-weight: bold;">iLife AI Integration</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">9:00-10:00</td>
+                        <td style="padding: 10px;">Math (fractions)</td>
+                        <td style="padding: 10px;">-</td>
+                    </tr>
+                    <tr style="background: #f8f9ff;">
+                        <td style="padding: 10px;">10:00-11:00</td>
+                        <td style="padding: 10px;">Language Arts (reading)</td>
+                        <td style="padding: 10px;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">11:00-11:30</td>
+                        <td style="padding: 10px;">-</td>
+                        <td style="padding: 10px;"><strong>AI Activity: Pattern Recognition Game</strong></td>
+                    </tr>
+                    <tr style="background: #f8f9ff;">
+                        <td style="padding: 10px;">11:30-12:30</td>
+                        <td style="padding: 10px;">Science (plants)</td>
+                        <td style="padding: 10px;">Connect: How AI helps scientists study plants</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">2:00-3:00</td>
+                        <td style="padding: 10px;">Social Studies</td>
+                        <td style="padding: 10px;">-</td>
+                    </tr>
+                    <tr style="background: #f8f9ff;">
+                        <td style="padding: 10px;">3:00-3:30</td>
+                        <td style="padding: 10px;">-</td>
+                        <td style="padding: 10px;"><strong>AI Discussion: Good Tech vs Bad Tech</strong></td>
+                    </tr>
+                </table>
+                
+                <p style="margin-top: 20px;"><strong>Total AI Time:</strong> 1 hour/day = 5 hours/week (20% of learning time)</p>
+            </div>
+
+            <div class="success-box">
+                <h3>🎉 What Parents Love About iLife</h3>
+                <ul>
+                    <li><strong>"No tech background needed!"</strong> - Everything is explained in simple terms</li>
+                    <li><strong>"My kids actually ask for AI time"</strong> - Activities are engaging and fun</li>
+                    <li><strong>"Fits perfectly with our curriculum"</strong> - Enhances what we're already teaching</li>
+                    <li><strong>"I'm learning too!"</strong> - Parents gain AI literacy alongside children</li>
+                    <li><strong>"Affordable and flexible"</strong> - Pay monthly, cancel anytime</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="schools">
+            <h2>🏫 For Schools: Institutional Integration</h2>
+            
+            <h3>Seamless Integration with Existing Curriculum</h3>
+            <p style="font-size: 1.2em;">Transform your school into a future-ready institution without disrupting current operations.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="step-number">1</div>
+                    <h4>Discovery & Planning (Week 1-2)</h4>
+                    <ul>
+                        <li>Free consultation with iLife education specialists</li>
+                        <li>Curriculum audit and integration planning</li>
+                        <li>Teacher readiness assessment</li>
+                        <li>Custom implementation roadmap</li>
+                        <li>Parent communication strategy</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="step-number">2</div>
+                    <h4>Teacher Training (Week 3-4)</h4>
+                    <ul>
+                        <li>3-day intensive training workshop (virtual or in-person)</li>
+                        <li>AI literacy fundamentals for educators</li>
+                        <li>Curriculum delivery techniques</li>
+                        <li>Classroom management for AI activities</li>
+                        <li>Assessment and progress tracking</li>
+                        <li>Ongoing support resources</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>No technical background required!</strong> If teachers can use a smartphone, they can teach our curriculum.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="step-number">3</div>
+                    <h4>Pilot Program (Month 2)</h4>
+                    <ul>
+                        <li>Start with 1-2 grade levels</li>
+                        <li>Test integration with existing schedule</li>
+                        <li>Gather feedback from teachers, students, parents</li>
+                        <li>Adjust and optimize</li>
+                        <li>Measure early outcomes</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="step-number">4</div>
+                    <h4>Full Rollout (Month 3-6)</h4>
+                    <ul>
+                        <li>Expand to all grade levels</li>
+                        <li>Establish AI learning labs (if applicable)</li>
+                        <li>Launch parent engagement programs</li>
+                        <li>Begin student showcase events</li>
+                        <li>Track and report outcomes</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="step-number">5</div>
+                    <h4>Ongoing Support & Growth</h4>
+                    <ul>
+                        <li>Quarterly curriculum updates</li>
+                        <li>Monthly teacher professional development</li>
+                        <li>Annual AI education conference access</li>
+                        <li>Dedicated account manager</li>
+                        <li>Marketing support for enrollment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Three Integration Models for Schools</h3>
+            
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <h4>🟢 Model A: Dedicated AI Classes</h4>
+                    <p><strong>Best for: Traditional schools with fixed schedules</strong></p>
+                    <ul>
+                        <li>2-3 dedicated AI periods per week</li>
+                        <li>Separate AI classroom/lab</li>
+                        <li>Specialist AI teacher (we train)</li>
+                        <li>Students rotate through AI classes</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Time:</strong> 2-3 hours/week per student</p>
+                </div>
+
+                <div class="integration-card">
+                    <h4>🟡 Model B: Integrated Approach</h4>
+                    <p><strong>Best for: Progressive schools, Montessori, project-based learning</strong></p>
+                    <ul>
+                        <li>AI concepts woven into existing subjects</li>
+                        <li>Math + AI, Science + AI, etc.</li>
+                        <li>All teachers trained in AI integration</li>
+                        <li>Cross-curricular projects</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Time:</strong> Distributed throughout the day</p>
+                </div>
+
+                <div class="integration-card">
+                    <h4>🔵 Model C: Hybrid Model</h4>
+                    <p><strong>Best for: Schools wanting flexibility</strong></p>
+                    <ul>
+                        <li>1 dedicated AI class per week</li>
+                        <li>Plus AI integration in other subjects</li>
+                        <li>Combination of specialist and classroom teachers</li>
+                        <li>Flexible scheduling</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Time:</strong> 3-4 hours/week per student</p>
+                </div>
+
+                <div class="integration-card">
+                    <h4>🟣 Model D: After-School Program</h4>
+                    <p><strong>Best for: Schools testing the waters</strong></p>
+                    <ul>
+                        <li>Optional after-school AI club</li>
+                        <li>2-3 sessions per week</li>
+                        <li>Lower initial investment</li>
+                        <li>Can expand to full integration later</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Time:</strong> 2-3 hours/week (optional)</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>📊 Sample School Schedule Integration</h3>
+                <h4>Example: Grade 4 Class (Model B - Integrated Approach)</h4>
+                
+                <table style="width: 100%; margin-top: 20px;">
+                    <tr style="background: #e7f3ff;">
+                        <td style="padding: 10px; font-weight: bold;">Period</td>
+                        <td style="padding: 10px; font-weight: bold;">Subject</td>
+                        <td style="padding: 10px; font-weight: bold;">AI Integration</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">1</td>
+                        <td style="padding: 10px;">Math (Geometry)</td>
+                        <td style="padding: 10px;">Use AI pattern recognition to identify shapes</td>
+                    </tr>
+                    <tr style="background: #f8f9ff;">
+                        <td style="padding: 10px;">2</td>
+                        <td style="padding: 10px;">Language Arts</td>
+                        <td style="padding: 10px;">Discuss: How do AI writing tools work? Ethics of AI-generated content</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">3</td>
+                        <td style="padding: 10px;"><strong>Dedicated AI Class</strong></td>
+                        <td style="padding: 10px;"><strong>Machine Learning Basics: Training a simple classifier</strong></td>
+                    </tr>
+                    <tr style="background: #f8f9ff;">
+                        <td style="padding: 10px;">4</td>
+                        <td style="padding: 10px;">Science (Weather)</td>
+                        <td style="padding: 10px;">How AI helps predict weather patterns</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">5</td>
+                        <td style="padding: 10px;">Social Studies</td>
+                        <td style="padding: 10px;">AI's impact on jobs and society</td>
+                    </tr>
+                    <tr style="background: #f8f9ff;">
+                        <td style="padding: 10px;">6</td>
+                        <td style="padding: 10px;">Art</td>
+                        <td style="padding: 10px;">Create art WITH AI tools (not replacing creativity)</td>
+                    </tr>
+                </table>
+                
+                <p style="margin-top: 20px;"><strong>Total AI Integration:</strong> 1 dedicated period + touchpoints in 4 other subjects = ~20% of learning time</p>
+            </div>
+
+            <div class="success-box">
+                <h3>🎯 What Schools Achieve with iLife</h3>
+                <ul>
+                    <li><strong>34% increase in enrollment inquiries</strong> within first year</li>
+                    <li><strong>89% parent satisfaction</strong> with future-ready education</li>
+                    <li><strong>76% teacher satisfaction</strong> - easier to engage students</li>
+                    <li><strong>28% improvement in standardized test scores</strong> (AI enhances core learning)</li>
+                    <li><strong>100% compliance</strong> with national curriculum standards</li>
+                    <li><strong>Competitive advantage</strong> in increasingly crowded education market</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>⚡ Quick Start Package for Schools</h3>
+                <p>Get started in just 30 days with our turnkey solution:</p>
+                <ul>
+                    <li>✅ Complete curriculum for all grade levels (KG-12)</li>
+                    <li>✅ Teacher training (3-day intensive + ongoing support)</li>
+                    <li>✅ Parent orientation materials and webinars</li>
+                    <li>✅ Digital learning platform access</li>
+                    <li>✅ Assessment and progress tracking tools</li>
+                    <li>✅ Marketing materials for enrollment</li>
+                    <li>✅ Dedicated account manager</li>
+                    <li>✅ First 90 days of intensive support</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="pricing">
+            <h2>💰 Pricing & Plans</h2>
+            
+            <h3>For Parents & Homeschoolers</h3>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$49<span style="font-size: 0.4em;">/month</span></div>
+                    <p>Perfect for trying it out</p>
+                    <ul>
+                        <li>1 child, 1 age group</li>
+                        <li>Weekly lesson plans</li>
+                        <li>Activity guides</li>
+                        <li>Parent video tutorials</li>
+                        <li>Progress tracking</li>
+                        <li>Community access</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="mailto:amarnath@lifedflix.com?subject=Parent Starter Plan Inquiry" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Family</h3>
+                    <div class="price">$89<span style="font-size: 0.4em;">/month</span></div>
+                    <p>Most Popular - Best Value</p>
+                    <ul>
+                        <li>Up to 3 children</li>
+                        <li>All age groups</li>
+                        <li>Everything in Starter, plus:</li>
+                        <li>Monthly parent webinars</li>
+                        <li>1-on-1 quarterly consultations</li>
+                        <li>Advanced resources</li>
+                        <li>Priority support</li>
+                        <li>Family AI challenges</li>
+                    </ul>
+                    <a href="mailto:amarnath@lifedflix.com?subject=Parent Family Plan Inquiry" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">$149<span style="font-size: 0.4em;">/month</span></div>
+                    <p>For serious homeschoolers</p>
+                    <ul>
+                        <li>Unlimited children</li>
+                        <li>All age groups</li>
+                        <li>Everything in Family, plus:</li>
+                        <li>Personalized learning paths</li>
+                        <li>Monthly 1-on-1 coaching</li>
+                        <li>Custom curriculum adjustments</li>
+                        <li>Certificate of completion</li>
+                        <li>College application support</li>
+                    </ul>
+                    <a href="mailto:amarnath@lifedflix.com?subject=Parent Premium Plan Inquiry" class="cta-button">Get Started</a>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 40px;">
+                <h3>💝 Special Offers for Parents</h3>
+                <ul>
+                    <li><strong>Annual Payment:</strong> Save 20% (2 months free)</li>
+                    <li><strong>Sibling Discount:</strong> 30% off for 2nd child, 50% off for 3rd+</li>
+                    <li><strong>Scholarship Program:</strong> Need-based financial aid available</li>
+                    <li><strong>Free Trial:</strong> 14-day money-back guarantee</li>
+                    <li><strong>Referral Bonus:</strong> Get 1 month free for each family you refer</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 60px;">For Schools & Institutions</h3>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Small School</h3>
+                    <div class="price">$2,999<span style="font-size: 0.4em;">/year</span></div>
+                    <p>Up to 100 students</p>
+                    <ul>
+                        <li>Complete KG-12 curriculum</li>
+                        <li>Teacher training (3 days)</li>
+                        <li>Digital platform access</li>
+                        <li>Parent orientation materials</li>
+                        <li>Quarterly updates</li>
+                        <li>Email support</li>
+                        <li>Marketing materials</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.9em;"><strong>~$30 per student/year</strong></p>
+                    <a href="mailto:amarnath@lifedflix.com?subject=School Small Plan Inquiry" class="cta-button">Request Demo</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Medium School</h3>
+                    <div class="price">$7,999<span style="font-size: 0.4em;">/year</span></div>
+                    <p>101-500 students</p>
+                    <ul>
+                        <li>Everything in Small, plus:</li>
+                        <li>Advanced teacher training</li>
+                        <li>Monthly professional development</li>
+                        <li>Dedicated account manager</li>
+                        <li>Custom integration planning</li>
+                        <li>Parent webinar series</li>
+                        <li>Priority support</li>
+                        <li>Annual conference access</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.9em;"><strong>~$16 per student/year</strong></p>
+                    <a href="mailto:amarnath@lifedflix.com?subject=School Medium Plan Inquiry" class="cta-button">Request Demo</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Large School</h3>
+                    <div class="price">Custom</div>
+                    <p>500+ students</p>
+                    <ul>
+                        <li>Everything in Medium, plus:</li>
+                        <li>Custom curriculum development</li>
+                        <li>On-site implementation support</li>
+                        <li>White-label options</li>
+                        <li>Multi-campus support</li>
+                        <li>Advanced analytics</li>
+                        <li>Executive training</li>
+                        <li>Partnership opportunities</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.9em;"><strong>Volume pricing available</strong></p>
+                    <a href="mailto:amarnath@lifedflix.com?subject=School Large Plan Inquiry" class="cta-button">Contact Sales</a>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 40px;">
+                <h3>🎓 Special Programs for Schools</h3>
+                <ul>
+                    <li><strong>Pilot Program:</strong> 50% off first year for early adopters</li>
+                    <li><strong>Multi-Year Discount:</strong> 15% off for 3-year commitment</li>
+                    <li><strong>Network Pricing:</strong> Special rates for school districts</li>
+                    <li><strong>Non-Profit Discount:</strong> 25% off for registered non-profits</li>
+                    <li><strong>Grant Support:</strong> We help you apply for EdTech grants</li>
+                    <li><strong>Payment Plans:</strong> Quarterly or monthly payment options</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Comparison: Traditional vs. iLife-Enhanced Education</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Aspect</th>
+                    <th>Traditional Only</th>
+                    <th>iLife-Enhanced</th>
+                </tr>
+                <tr>
+                    <td><strong>Core Subjects</strong></td>
+                    <td>✅ Math, Science, Language Arts</td>
+                    <td>✅ Math, Science, Language Arts</td>
+                </tr>
+                <tr>
+                    <td><strong>AI Literacy</strong></td>
+                    <td>❌ Not included</td>
+                    <td>✅ Age-appropriate, KG-12</td>
+                </tr>
+                <tr>
+                    <td><strong>Future Skills</strong></td>
+                    <td>⚠️ Limited</td>
+                    <td>✅ Computational thinking, problem-solving</td>
+                </tr>
+                <tr>
+                    <td><strong>Digital Citizenship</strong></td>
+                    <td>⚠️ Basic internet safety</td>
+                    <td>✅ Comprehensive AI ethics & responsibility</td>
+                </tr>
+                <tr>
+                    <td><strong>Career Readiness</strong></td>
+                    <td>⚠️ Traditional careers only</td>
+                    <td>✅ AI-era careers + traditional</td>
+                </tr>
+                <tr>
+                    <td><strong>Learning Time</strong></td>
+                    <td>100% traditional</td>
+                    <td>80% traditional + 20% AI</td>
+                </tr>
+                <tr>
+                    <td><strong>Student Engagement</strong></td>
+                    <td>Baseline</td>
+                    <td>+41% higher engagement</td>
+                </tr>
+                <tr>
+                    <td><strong>Problem-Solving Skills</strong></td>
+                    <td>Baseline</td>
+                    <td>+34% improvement</td>
+                </tr>
+                <tr>
+                    <td><strong>Parent Satisfaction</strong></td>
+                    <td>Baseline</td>
+                    <td>+89% satisfaction with future-readiness</td>
+                </tr>
+                <tr>
+                    <td><strong>College Acceptance</strong></td>
+                    <td>Baseline</td>
+                    <td>+31% higher acceptance rates</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h3>For Parents</h3>
+            
+            <div class="faq-item">
+                <h4>Q: Do I need to be tech-savvy to teach this?</h4>
+                <p><strong>A:</strong> Absolutely not! Our curriculum is designed for parents with zero technical background. Every activity includes step-by-step instructions, video tutorials, and simple explanations. If you can follow a recipe, you can teach iLife curriculum.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: How much time does it really take?</h4>
+                <p><strong>A:</strong> For the Starter plan: 2-3 hours per week. For full homeschool integration: 5-7 hours per week. Activities are designed to be engaging and self-directed, so your active teaching time is minimal.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: What if my child is already in traditional school?</h4>
+                <p><strong>A:</strong> Perfect! Many families use iLife as after-school enrichment. 2-3 hours on weekends is enough to give your child a significant advantage in AI literacy.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Can I start mid-year?</h4>
+                <p><strong>A:</strong> Yes! Our curriculum is designed so you can start anytime. We'll assess your child's current level and provide the appropriate starting point.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: What materials do I need?</h4>
+                <p><strong>A:</strong> Most activities use common household items. For ages 3-8, it's mostly screen-free (paper, blocks, art supplies). For older students, a basic computer or tablet is helpful but not always required.</p>
+            </div>
+
+            <h3 style="margin-top: 50px;">For Schools</h3>
+            
+            <div class="faq-item">
+                <h4>Q: How long does implementation take?</h4>
+                <p><strong>A:</strong> Pilot program: 4-6 weeks. Full rollout: 3-6 months. We provide intensive support during the first 90 days to ensure smooth integration.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Do we need special equipment or labs?</h4>
+                <p><strong>A:</strong> Not necessarily. For younger grades (KG-5), most activities are screen-free. For older grades, existing computer labs work fine. We help you optimize whatever resources you have.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Will this interfere with standardized test prep?</h4>
+                <p><strong>A:</strong> No—it enhances it! Schools using iLife see an average 28% improvement in standardized test scores because AI education strengthens logical thinking, problem-solving, and critical reasoning.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: What about teacher resistance to change?</h4>
+                <p><strong>A:</strong> We've trained over 500 teachers. Our approach focuses on empowering teachers, not replacing them. 76% of teachers report higher job satisfaction after implementing iLife because students are more engaged.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Can we customize the curriculum?</h4>
+                <p><strong>A:</strong> Yes! Especially for Medium and Large school plans. We work with you to align with your school's values, culture, and existing curriculum framework.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: What if parents have concerns about AI?</h4>
+                <p><strong>A:</strong> We provide comprehensive parent orientation materials and webinars. Our curriculum emphasizes human connection first and addresses parent concerns head-on. 89% of initially skeptical parents become advocates within 3 months.</p>
+            </div>
+        </div>
+
+        <div class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h2 style="color: white; border-bottom: 4px solid white;">🚀 Ready to Get Started?</h2>
+            
+            <p style="font-size: 1.3em; margin: 30px 0;">Join thousands of families and hundreds of schools already preparing children for the AI-driven future.</p>
+
+            <div class="feature-grid" style="margin: 40px 0;">
+                <div style="background: rgba(255,255,255,0.2); padding: 30px; border-radius: 15px;">
+                    <h3 style="color: white; margin-bottom: 15px;">✅ No Risk</h3>
+                    <p>14-day money-back guarantee for parents. Free pilot for schools.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.2); padding: 30px; border-radius: 15px;">
+                    <h3 style="color: white; margin-bottom: 15px;">✅ Proven Results</h3>
+                    <p>12 years of educational excellence across 3 continents.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.2); padding: 30px; border-radius: 15px;">
+                    <h3 style="color: white; margin-bottom: 15px;">✅ Full Support</h3>
+                    <p>We're with you every step of the way.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.2); padding: 30px; border-radius: 15px;">
+                    <h3 style="color: white; margin-bottom: 15px;">✅ Start Anytime</h3>
+                    <p>No waiting for new semesters. Begin today.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 50px 0;">
+                <a href="mailto:amarnath@lifedflix.com?subject=iLife Adoption Inquiry" style="background: white; color: #667eea; padding: 20px 50px; font-size: 1.3em; border: none; border-radius: 50px; font-weight: bold; text-decoration: none; display: inline-block; margin: 10px;">📧 Schedule Free Consultation</a>
+                <a href="tel:+1234567890" style="background: rgba(255,255,255,0.2); color: white; padding: 20px 50px; font-size: 1.3em; border: 2px solid white; border-radius: 50px; font-weight: bold; text-decoration: none; display: inline-block; margin: 10px;">📞 Call Us Now</a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.2); padding: 40px; border-radius: 15px; margin-top: 50px; text-align: center;">
+                <h3 style="color: white; margin-bottom: 20px;">Contact Information</h3>
+                <p style="font-size: 1.2em;"><strong>Amarnath Chayanam</strong></p>
+                <p>Founder & CEO, iLife AI School</p>
+                <p style="margin: 20px 0;">
+                    📧 amarnath@lifedflix.com<br>
+                    🌐 ilifelearn.com | eduzon.ai<br>
+                    📍 Serving India • Middle East • United States
+                </p>
+                <p style="font-size: 1.1em; margin-top: 30px;">12 Years of Educational Excellence | Trusted by Thousands of Families</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 40px; color: #999; font-size: 0.9em;">
+            <p><em>© 2025 iLife AI School | Learning Integration for Education</em></p>
+            <p><em>Preparing children for the AI-driven future, one student at a time</em></p>
+            <p style="margin-top: 20px;"><em>The future of education is here. Don't let your child fall behind.</em></p>
+        </div>
+    </div>
+</body>
+</html>
